@@ -57,3 +57,4 @@ You can get the source code for the Password Generator app from GitHub:
 
 - <a aligb="center" href="https://www.mediafire.com/file/z9gqg2l0wwnb506/Password+Generator+1.0.0.exe/file">[Download Windows app</a>
 - [Source Code Repository](https://github.com/Ali-Cheikh/-Password-Generator-)
+- [Android app](https://www.mediafire.com/file/656zaypg4etm9nt/Password+Generator.apk/file)
