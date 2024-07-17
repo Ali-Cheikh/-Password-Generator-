@@ -1,4 +1,4 @@
-<img src="/11374143.png" align="right" width="11%">
+<img src="11374143.png" align="right" width="11%">
 
 
 # Password-manager
