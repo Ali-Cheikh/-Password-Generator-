@@ -1,47 +1,69 @@
-<!-- PG : Stands for Password Generation -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/57839971?s=96&v=4" type="image/x-icon">
+    <title>🔐 Password Generator</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include SweetAlert CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>🔐| Password Generator</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Password Generator</h1>
-        <form id="passwordForm">
-            <label for="length">Password Length:</label>
-            <input type="number" id="length" name="length" min="4" max="128" required>
+<body class="flex items-center justify-center h-screen">
+    <div class="absolute top-4 right-4">
+        <button id="themeToggle" class="py-2 px-4 rounded-md focus:outline-none">Switch to Light Theme</button>
+    </div>
+    <div class="container p-8 rounded-lg shadow-lg w-full max-w-sm text-center">
+        <h1 class="text-2xl font-bold mb-6">Password Generator</h1>
+        <form id="passwordForm" class="space-y-4">
+            <div>
+                <label for="length" class="block text-left font-semibold">Password Length:</label>
+                <div class="flex justify-between items-center">
+                    <button type="button" class="length-button px-4 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" data-length="4">4</button>
+                    <button type="button" class="length-button px-4 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" data-length="8">8</button>
+                    <button type="button" class="length-button px-4 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" data-length="12">12</button>
+                    <button type="button" id="decreaseLength" class="px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">-</button>
+                    <span id="lengthDisplay" class="px-4 py-2 bg-gray-100 text-black rounded-md">8</span>
+                    <button type="button" id="increaseLength" class="px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">+</button>
+                </div>
+            </div>
 
-            <label>
-                <input type="checkbox" name="uppercase" checked>
-                Include Uppercase Letters
-            </label>
-            <label>
-                <input type="checkbox" name="lowercase" checked>
-                Include Lowercase Letters
-            </label>
-            <label>
-                <input type="checkbox" name="digits" checked>
-                Include Digits
-            </label>
-            <label>
-                <input type="checkbox" name="special" checked>
-                Include Special Characters
-            </label>
+            <div class="flex items-center">
+                <input type="checkbox" name="uppercase" id="uppercase" checked class="mr-2">
+                <label for="uppercase" class="font-semibold">Include Uppercase Letters</label>
+            </div>
 
-            <button type="button" id="generateButton">Generate Password</button>
+            <div class="flex items-center">
+                <input type="checkbox" name="lowercase" id="lowercase" checked class="mr-2">
+                <label for="lowercase" class="font-semibold">Include Lowercase Letters</label>
+            </div>
+
+            <div class="flex items-center">
+                <input type="checkbox" name="digits" id="digits" checked class="mr-2">
+                <label for="digits" class="font-semibold">Include Digits</label>
+            </div>
+
+            <div class="flex items-center">
+                <input type="checkbox" name="special" id="special" checked class="mr-2">
+                <label for="special" class="font-semibold">Include Special Characters</label>
+            </div>
+
+            <button type="button" id="generateButton" class="w-full py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">Generate Password</button>
         </form>
 
-        <div class="result">
-            <h2>Generated Password:</h2>
-            <p id="generatedPassword"></p>
-            <button id="copyButton">Copy to Clipboard</button>
+        <div class="result mt-6">
+            <h2 class="text-xl font-semibold">Generated Password:</h2>
+            <p id="generatedPassword" style="color: #000000;" class="bg-gray-100 p-3 rounded-md mt-2 break-words"></p>
+            <button id="copyButton" class="mt-4 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">Copy to Clipboard</button>
         </div>
     </div>
-
-<script src="script.js"></script>
+    <div class="absolute bottom-2 ">
+        <h4><b style="color: gold;font-size: larger;"><></b> with <b style="color: rgb(252, 100, 125);font-size: larger;">&#60;3</b> by <u><a style="font-size: large;" href="https://github.com/Ali-Cheikh/-Password-Generator-" class="hover:bg-red-600"> unexpected <center><img width="15%" src="https://avatars.githubusercontent.com/u/57839971?s=96&v=4" alt="avatar" ></center></a></u></h4>
+    </div>
+    <!-- Include SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
 </body>
 </html>
